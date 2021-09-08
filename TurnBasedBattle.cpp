@@ -1,24 +1,26 @@
 #include <iostream>
 
+using namespace std;
+
 class Demon {
 
-}
+};
 
-class JackFrost {
+class JackFrost : public Demon {
 
-}
+};
 
 class Pixie {
 
-}
+};
 
 class Odin {
 
-}
+};
 
 class Player {
 
-}
+};
 
 int main() {
 
