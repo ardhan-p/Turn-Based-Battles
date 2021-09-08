@@ -17,7 +17,7 @@ Demon::Demon() {
 }
 
 Demon::~Demon() {
-    cout << this->name << " defeated!" << endl;   
+
 }
 
 string Demon::getName() {
@@ -89,5 +89,6 @@ void Demon::setDefendMode(bool defendMode) {
 }
 
 void Demon::attackPhys(Player &p1) {
-    p1.setHP(this->atk - p1.getDEF());
+    int power = this->atk - p1.getDEF();
+    p1.setHP(p1.getHP() - power);
 }

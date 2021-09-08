@@ -1,7 +1,8 @@
 #ifndef JACKFROST_H
 #define JACKFROST_H
 #include "Demon.h"
-#include "Player.h"
+
+class Player;
 
 using namespace std;
 
@@ -12,6 +13,5 @@ class JackFrost : public Demon {
 
         void attackBufula(Player&);
 };
-
 
 #endif
