@@ -2,8 +2,10 @@
 #define PLAYER_H
 #include <iostream>
 #include <string>
-#include "Demon.h"
 #include "ElementalTypes.h"
+
+// forward declaration for Demon class to avoid compilation errors
+class Demon;
 
 using namespace std;
 

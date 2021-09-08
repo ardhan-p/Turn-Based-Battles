@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Demon.h"
-#include "Player.h"
+#include "../Player.h"
 
 using namespace std;
 
