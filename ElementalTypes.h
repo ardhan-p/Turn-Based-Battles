@@ -10,6 +10,6 @@ enum Elements {
     Light,
     Dark,
     Almighty
-}
+};
 
 #endif

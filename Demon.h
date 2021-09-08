@@ -2,8 +2,8 @@
 #define DEMON_H
 #include <iostream>
 #include <string>
-#include "../Player.h"
-#include "../ElementalTypes.h"
+#include "Player.h"
+#include "ElementalTypes.h"
 
 using namespace std;
 
@@ -17,6 +17,7 @@ class Demon {
 
     public:
         Demon();
+        virtual ~Demon();
 
         // get methods
         string getName();
@@ -26,21 +27,21 @@ class Demon {
         int getATK();
         int getDEF();
         int getEXP();
+        bool getDefendMode();
+        Elements* getWeaknesses();
 
         // set functions
-        string setName(string);
+        void setName(string);
         void setHP(int);
         void setMP(int);
         void setLVL(int);
         void setATK(int);
         void setDEF(int);
         void setEXP(int);
-
-        // change defence mode
-        void defendMode(bool);
+        void setDefendMode(bool);
 
         // default attack move
-        void attack(Player&);
+        void attackPhys(Player&);
 };
 
 #endif
