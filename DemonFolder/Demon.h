@@ -44,6 +44,9 @@ class Demon {
 
         // default attack move
         void attackPhys(Player&);
+
+        // overloading stream operators
+        friend ostream& operator<<(ostream&, const Demon&);
 };
 
 #endif

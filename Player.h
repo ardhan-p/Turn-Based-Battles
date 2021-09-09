@@ -51,6 +51,9 @@ class Player {
         void attackAgi(Demon&);
         void attackZan(Demon&);
         void attackBufu(Demon&);
+
+        // overloading output operator
+        friend ostream& operator<<(ostream&, const Player&);
 };
 
 #endif

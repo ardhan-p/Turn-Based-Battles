@@ -18,8 +18,15 @@ Player::Player() {
 }
 
 Player::Player(string name) {
-    Player();
     this->name = name;
+    this->defendMode = false;
+    this->hp = 100;
+    this->mp = 50;
+    this->lvl = 1;
+    this->atk = 10;
+    this->def = 10;
+    this->currentExp = 0;
+    this->expCap = 100;
 }
 
 string Player::getName() {
@@ -105,6 +112,8 @@ void Player::attackPhys(Demon &enemy) {
     }
 
     enemy.setHP(enemy.getHP() - power);
+        
+    cout << this->name << " attacks " << enemy.getName() << " for " << power << " damage!" << endl << endl;
 }
 
 void Player::attackZio(Demon &enemy) {
@@ -178,3 +187,12 @@ void Player::attackBufu(Demon &enemy) {
     enemy.setHP(enemy.getHP() - power);
     this->mp = mp - 4;
 }
+
+ ostream& operator<<(ostream& out, const Player& user) {
+    out << user.name << endl;
+    out << "Level: " << user.lvl << endl;
+    out << "HP: " << user.hp << endl;
+    out << "MP: " << user.mp << endl;
+    out << "Current XP: " << user.currentExp << " / " << user.expCap << endl;
+    return out; 
+ }

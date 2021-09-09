@@ -97,3 +97,10 @@ void Demon::attackPhys(Player &p1) {
 
     p1.setHP(p1.getHP() - power);
 }
+
+ostream& operator<<(ostream& out, const Demon& user) {
+    out << user.name << endl;
+    out << "Level: " << user.lvl << endl;
+    out << "HP: " << user.hp << endl;
+    return out;
+}
