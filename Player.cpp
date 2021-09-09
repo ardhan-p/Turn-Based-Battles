@@ -98,5 +98,83 @@ void Player::setDefendMode(bool defendMode) {
 }
 
 void Player::attackPhys(Demon &enemy) {
-    enemy.setHP(this->atk - enemy.getDEF());
+    int power = this->atk - enemy.getDEF();
+
+    if (enemy.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
+    enemy.setHP(enemy.getHP() - power);
+}
+
+void Player::attackZio(Demon &enemy) {
+    int power = this->atk - enemy.getDEF() + 7;
+
+    // checks for weakness in player
+    for (int i = 0; i < 8; i++) {
+        if (*(enemy.getWeaknesses() + i) == Electric) {
+            power *= 1.5;
+        }
+    }
+
+    if (enemy.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
+    enemy.setHP(enemy.getHP() - power);
+    this->mp = mp - 4;
+}
+
+void Player::attackAgi(Demon &enemy) {
+    int power = this->atk - enemy.getDEF() + 7;
+
+    // checks for weakness in player
+    for (int i = 0; i < 8; i++) {
+        if (*(enemy.getWeaknesses() + i) == Fire) {
+            power *= 1.5;
+        }
+    }
+
+    if (enemy.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
+    enemy.setHP(enemy.getHP() - power);
+    this->mp = mp - 4;
+}
+
+void Player::attackZan(Demon &enemy) {
+    int power = this->atk - enemy.getDEF() + 7;
+
+    // checks for weakness in player
+    for (int i = 0; i < 8; i++) {
+        if (*(enemy.getWeaknesses() + i) == Force) {
+            power *= 1.5;
+        }
+    }
+
+    if (enemy.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
+    enemy.setHP(enemy.getHP() - power);
+    this->mp = mp - 4;
+}
+
+void Player::attackBufu(Demon &enemy) {
+    int power = this->atk - enemy.getDEF() + 7;
+
+    // checks for weakness in player
+    for (int i = 0; i < 8; i++) {
+        if (*(enemy.getWeaknesses() + i) == Ice) {
+            power *= 1.5;
+        }
+    }
+
+    if (enemy.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
+    enemy.setHP(enemy.getHP() - power);
+    this->mp = mp - 4;
 }

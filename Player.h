@@ -47,10 +47,10 @@ class Player {
         void attackPhys(Demon&);
 
         // skill moves
-        // void attackZio(Demon&);
-        // void attackAgi(Demon&);
-        // void attackZan(Demon&);
-        // void attackBufu(Demon&);
+        void attackZio(Demon&);
+        void attackAgi(Demon&);
+        void attackZan(Demon&);
+        void attackBufu(Demon&);
 };
 
 #endif

@@ -9,7 +9,7 @@ JackFrost::JackFrost() {
     Demon();
     this->name = "Jack Frost";
     this->hp = 50;
-    this->hp = 25;
+    this->mp = 25;
     this->lvl = 5;
     this->atk = 8;
     this->def = 5;
@@ -22,7 +22,7 @@ JackFrost::~JackFrost() {
 }
 
 void JackFrost::attackBufula(Player &p1) {
-    int power = this->atk - p1.getDEF();
+    int power = this->atk - p1.getDEF() + 5;
 
     // checks for weakness in player
     for (int i = 0; i < 8; i++) {
@@ -31,6 +31,11 @@ void JackFrost::attackBufula(Player &p1) {
         }
     }
 
+    if (p1.getDefendMode() == true) {
+        power *= 0.75;
+    }
+
     p1.setHP(p1.getHP() - power);
+    this->mp = mp - 4;
 }
 

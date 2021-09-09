@@ -1,7 +1,8 @@
 #ifndef ODIN_H
 #define ODIN_H
 #include "Demon.h"
-#include "Player.h"
+
+class Player;
 
 using namespace std;
 
